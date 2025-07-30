@@ -1,8 +1,8 @@
-<testsuites id="" name="" tests="3" failures="1" skipped="0" errors="0" time="10.963297">
-<testsuite name="example.spec.ts" timestamp="2025-07-29T21:23:07.712Z" hostname="chromium" tests="3" failures="1" skipped="0" time="15.549" errors="0">
-<testcase name="Example Tests › should load homepage" classname="example.spec.ts" time="3.592">
+<testsuites id="" name="" tests="3" failures="1" skipped="0" errors="0" time="10.657058999999999">
+<testsuite name="example.spec.ts" timestamp="2025-07-30T21:20:34.766Z" hostname="chromium" tests="3" failures="1" skipped="0" time="15.549" errors="0">
+<testcase name="Example Tests › should load homepage" classname="example.spec.ts" time="3.317">
 </testcase>
-<testcase name="Example Tests › should have correct heading" classname="example.spec.ts" time="8.761">
+<testcase name="Example Tests › should have correct heading" classname="example.spec.ts" time="8.732">
 <failure message="example.spec.ts:12:7 should have correct heading" type="FAILURE">
 <![CDATA[  [chromium] › example.spec.ts:12:7 › Example Tests › should have correct heading ──────────────────
 
@@ -46,7 +46,7 @@
 ]]>
 </system-out>
 </testcase>
-<testcase name="Example Tests › should navigate and check URL" classname="example.spec.ts" time="3.196">
+<testcase name="Example Tests › should navigate and check URL" classname="example.spec.ts" time="3.5">
 </testcase>
 </testsuite>
 </testsuites>

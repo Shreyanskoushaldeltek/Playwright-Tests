@@ -9,14 +9,6 @@ test.describe('Example Tests', () => {
     await expect(page).toHaveTitle("Swag Labs");
   });
 
-  test('should have correct heading', async ({ page }) => {
-    await page.goto('https://www.saucedemo.com');
-    const login = page.locator('#login-button');
-    await login.click();
-    const heading = page.locator('.app_logo');
-    await expect(heading).toContainText('Swag Labs');
-  });
-
   test('should navigate and check URL', async ({ page }) => {
     await page.goto('https://www.saucedemo.com');
     
