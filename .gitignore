@@ -1,0 +1,16 @@
+node_modules/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+*.log
+.env
+.env.local
+.vscode/
+.idea/
+*.tmp
+*.temp
+dist/
+coverage/
+.nyc_output/
+screenshots/

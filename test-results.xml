@@ -1,0 +1,52 @@
+<testsuites id="" name="" tests="3" failures="1" skipped="0" errors="0" time="10.963297">
+<testsuite name="example.spec.ts" timestamp="2025-07-29T21:23:07.712Z" hostname="chromium" tests="3" failures="1" skipped="0" time="15.549" errors="0">
+<testcase name="Example Tests › should load homepage" classname="example.spec.ts" time="3.592">
+</testcase>
+<testcase name="Example Tests › should have correct heading" classname="example.spec.ts" time="8.761">
+<failure message="example.spec.ts:12:7 should have correct heading" type="FAILURE">
+<![CDATA[  [chromium] › example.spec.ts:12:7 › Example Tests › should have correct heading ──────────────────
+
+    Error: Timed out 5000ms waiting for expect(locator).toContainText(expected)
+
+    Locator: locator('.app_logo')
+    Expected string: "Swag Labs"
+    Received: <element(s) not found>
+    Call log:
+      - Expect "toContainText" with timeout 5000ms
+      - waiting for locator('.app_logo')
+
+
+      15 |     await login.click();
+      16 |     const heading = page.locator('.app_logo');
+    > 17 |     await expect(heading).toContainText('Swag Labs');
+         |                           ^
+      18 |   });
+      19 |
+      20 |   test('should navigate and check URL', async ({ page }) => {
+        at C:\Users\shreyanskoushal\playwright-framework\tests\example.spec.ts:17:27
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\example-Example-Tests-should-have-correct-heading-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\example-Example-Tests-should-have-correct-heading-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\example-Example-Tests-should-have-correct-heading-chromium\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\example-Example-Tests-should-have-correct-heading-chromium\test-failed-1.png]]
+
+[[ATTACHMENT|test-results\example-Example-Tests-should-have-correct-heading-chromium\video.webm]]
+
+[[ATTACHMENT|test-results\example-Example-Tests-should-have-correct-heading-chromium\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Example Tests › should navigate and check URL" classname="example.spec.ts" time="3.196">
+</testcase>
+</testsuite>
+</testsuites>
