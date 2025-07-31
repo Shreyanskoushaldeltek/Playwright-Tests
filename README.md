@@ -1,21 +1,19 @@
 # Playwright Framework with TypeScript
 
-A comprehensive Playwright testing framework with TypeScript, Docker integration, and GitHub Actions CI/CD pipeline.
+A comprehensive Playwright testing framework with TypeScript and GitHub Actions CI/CD pipeline.
 
 ## Features
 
 - ✅ TypeScript support
 - ✅ Page Object Model pattern
-- ✅ Docker containerization
-- ✅ GitHub Actions CI/CD
-- ✅ Multiple browser support (Chromium, Firefox, WebKit)
+- ✅ GitHub Actions CI/CD with containerized testing
+- ✅ Chromium browser testing (expandable to Firefox, WebKit)
 - ✅ Test reporting (HTML, JSON, JUnit)
 - ✅ Screenshots and video recording on failure
 
 ## Prerequisites
 
-- Node.js (v16 or higher)
-- Docker (optional, for containerized testing)
+- Node.js (v18 or higher)
 
 ## Installation
 
@@ -44,7 +42,6 @@ playwright-framework/
 │   └── utils/          # Utility functions
 ├── tests/              # Test files
 ├── .github/workflows/  # GitHub Actions workflows
-├── Dockerfile          # Docker configuration
 ├── playwright.config.ts # Playwright configuration
 └── tsconfig.json       # TypeScript configuration
 ```
@@ -60,6 +57,9 @@ npm test
 # Run tests in headed mode
 npm run test:headed
 
+# Run specific browser tests
+npm run test:chromium
+
 # Run tests with UI mode
 npm run test:ui
 
@@ -70,16 +70,6 @@ npm run test:debug
 npm run test:report
 ```
 
-### Docker Testing
-
-```bash
-# Build and run tests in Docker
-npm run test:docker
-
-# Or manually:
-docker build -t playwright-tests .
-docker run --rm playwright-tests
-```
 
 ## Configuration
 
@@ -88,7 +78,7 @@ docker run --rm playwright-tests
 The `playwright.config.ts` file contains:
 
 - Test directory configuration
-- Browser configurations (Chrome, Firefox, Safari, Mobile)
+- Browser configurations (Chromium, configurable for other browsers)
 - Reporter settings
 - Base URL and other test settings
 
@@ -142,15 +132,14 @@ test('should perform search', async ({ page }) => {
 
 The GitHub Actions workflow (`/.github/workflows/playwright.yml`) includes:
 
-- **Multi-browser testing**: Tests run on Chromium, Firefox, and WebKit
-- **Docker testing**: Additional test run in Docker container
+- **Containerized testing**: Tests run in official Playwright container for consistent environment
+- **Chromium testing**: Optimized for Chromium browser (expandable to other browsers)
 - **Artifact upload**: Test reports and results are saved as artifacts
-- **Parallel execution**: Tests run in parallel for faster feedback
+- **Efficient execution**: Streamlined workflow using pre-built Playwright container
 
 ### Workflow Triggers
 
-- Push to `main` or `develop` branches
-- Pull requests to `main` branch
+- Push to `main` branch
 
 ## Environment Variables
 
@@ -182,7 +171,7 @@ After running tests, you can view reports:
 
 1. **Browser not found**: Run `npx playwright install`
 2. **TypeScript errors**: Check `tsconfig.json` configuration
-3. **Docker issues**: Ensure Docker is running and has sufficient resources
+3. **CI issues**: Tests run in containerized environment with pre-installed Playwright
 
 ### Debug Mode
 
