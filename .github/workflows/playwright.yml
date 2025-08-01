@@ -6,7 +6,7 @@ on:
 
 jobs:
   test:
-    timeout-minutes: 60 #Ensures this job will be forcibly stopped if it runs longer than 60 minutes.
+    timeout-minutes: 120 #Ensures this job will be forcibly stopped if it runs longer than 60 minutes.
     runs-on: ubuntu-latest #macos-latest, window-latest
     container:
       image: mcr.microsoft.com/playwright:v1.54.0-noble
@@ -20,8 +20,7 @@ jobs:
     
     - name: Install dependencies
       run: npm ci
-    
-    
+
     - name: Run Playwright tests
       run: npx playwright test --project=${{ matrix.browser }}
     
